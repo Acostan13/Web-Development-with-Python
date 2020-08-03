@@ -4,31 +4,31 @@ print(__name__)
 
 
 @app.route('/')
-def hello_world():
+def my_portfolio():
     print(url_for('static', filename='favicon.ico'))
     return render_template('./index.html')
 
 
-@app.route('/<username>')
-def user_name(username=None):
-    return render_template('./index.html', name=username)
-
-
-@app.route('/')
+@app.route('/index.html')
 def my_home():
     return render_template('./index.html')
 
 
+@app.route('/works.html')
+def my_works():
+    return render_template('works.html')
+
+
 @app.route('/about.html')
-def about():
-    return render_template('./about.html')
+def about_me():
+    return render_template('about.html')
 
 
-@app.route('/blog')
-def blog():
-    return 'These are my thoughts on blogs.'
+@app.route('/contact.html')
+def my_contact():
+    return render_template('contact.html')
 
 
-@app.route('/blog/2020/dogs')
-def blog2():
-    return 'This is my dog'
+@app.route('/components.html')
+def my_components():
+    return render_template('components.html')
