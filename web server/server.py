@@ -14,9 +14,9 @@ def user_name(username=None):
     return render_template('./index.html', name=username)
 
 
-@app.route('/<username>/<int:post_id>')
-def user_name_and_post_id(username=None, post_id=None):
-    return render_template('./index.html', name=username, post_id=post_id)
+@app.route('/')
+def my_home():
+    return render_template('./index.html')
 
 
 @app.route('/about.html')
